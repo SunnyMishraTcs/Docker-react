@@ -1,0 +1,10 @@
+sudo: required
+services: 
+    - docker
+
+before_install:
+    - docker build -t sunny199/Docker-react -f Dockerfile.dev .
+
+## tell how to test
+script:
+    - docker run sunny199/Docker-react npm run test -- --coverage        
